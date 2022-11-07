@@ -1,0 +1,10 @@
+[
+	{
+		"image": "/Grapevine.png",
+		"title": "Thru the Grapevine",
+		"description": "Custom WordPress Theme for Berlin based digital radio format including a 3D Header Section and custom fields.",
+		"roles": ["Development", "Design"],
+		"link": "",
+		"tech": ["Wordpress", "PHP", "Three.js"]
+	}
+]
