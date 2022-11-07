@@ -1,10 +1,14 @@
 <!-- src/routes/[slug]/+page.svelte -->
 <script lang="ts">
+	import { VERTICAL_LINE_ENTITY } from '$lib/constants/entities';
+
 	interface PostData {
 		content: any;
 		title: string;
 		date: string;
 		published: boolean;
+		featuredImage: string;
+		seoMetaDescription: string;
 	}
 
 	export let data: PostData;
@@ -14,7 +18,20 @@
 		month: 'numeric',
 		day: 'numeric'
 	});
+
+	const pageTitle = `${data.title} ${VERTICAL_LINE_ENTITY} Jason Thompson`;
 </script>
+
+<svelte:head>
+	<title>{pageTitle}</title>
+	<meta name="description" content={data.seoMetaDescription} />
+	<meta name="twitter:card" content="summary_large_image" />
+	{#if data.featuredImage}
+		<meta name="twitter:image" content={data.featuredImage} />
+	{/if}
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content={'Jason Thompson'} />
+</svelte:head>
 
 <article>
 	<header class="mb-16">

@@ -1,5 +1,7 @@
 ---
 title: 'Conways Game Of Life - Intro to Cellular Automata and Renderbuffers in Three.js'
+seoMetaDescription: 'Conways Game Of Life implemented as a Shader'
+featuredImage: '../assets/gol.gif'
 date: '2022-11-05'
 published: true
 ---
