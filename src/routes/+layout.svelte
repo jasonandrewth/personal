@@ -2,6 +2,7 @@
 	import { browser } from '$app/environment';
 	import { page, navigating } from '$app/stores';
 	import { fade } from 'svelte/transition';
+	import DeviceDetector from 'svelte-device-detector';
 
 	import Menu from '$lib/components/Nav/Menu.svelte';
 	import Nav from '$lib/components/Nav/Nav.svelte';
@@ -66,7 +67,9 @@
 	>
 		<Loading />
 		<slot />
-		<Menu {menuOpen} {menuHandler} />
+		<DeviceDetector showInDevice="mobile">
+			<Menu {menuOpen} {menuHandler} />
+		</DeviceDetector>
 		<Footer />
 	</main>
 {/key}
