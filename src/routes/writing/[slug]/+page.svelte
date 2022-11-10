@@ -33,7 +33,7 @@
 	<meta name="twitter:data1" content={'Jason Thompson'} />
 </svelte:head>
 
-<article>
+<article class="mx-auto max-w-7xl">
 	<header class="mb-16">
 		<h1 class="text-3xl md:text-4xl tracking-wide text-center uppercase mb-4">{data.title}</h1>
 
