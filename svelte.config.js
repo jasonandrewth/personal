@@ -9,11 +9,16 @@ const config = {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: null,
-			precompress: false
+			fallback: 'null',
+			precompress: false,
+			strict: false
 		}),
 	},
 	extensions: ['.svelte', '.md'],
+	// prerender: {
+	// 	handleHttpError: 'ignore',
+	// 	handleMissingId: 'ignore',
+	// },
 	preprocess: [
 		sveltePreprocess(),
 		mdsvex({

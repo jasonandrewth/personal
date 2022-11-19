@@ -9,7 +9,7 @@ export const GET = async () => {
 		return post.meta.published === true;
 	});
 
-	const sortedPosts = publishedPosts.sort((a, b) => {
+	const sortedPosts = publishedPosts?.sort((a, b) => {
 		//@ts-ignore
 		return new Date(b.meta.date) - new Date(a.meta.date);
 	});
