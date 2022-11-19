@@ -3,7 +3,7 @@ title: 'Conways Game Of Life - Intro to Cellular Automata and Renderbuffers in T
 seoMetaDescription: 'Conways Game Of Life implemented as a Shader'
 featuredImage: '../assets/gol.gif'
 date: '2022-11-05'
-published: true
+published: false
 ---
 
 <script>
