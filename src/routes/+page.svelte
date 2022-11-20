@@ -15,7 +15,7 @@
 </script>
 
 <DeviceDetector showInDevice="desktop">
-	<section class="absolute top-0 left-0 w-full h-[70vh] md:h-screen">
+	<section class="absolute top-0 left-0 w-screen h-screen">
 		<Canvas />
 	</section>
 </DeviceDetector>
