@@ -20,7 +20,6 @@
 		// const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
 		const material = new THREE.ShaderMaterial({
-			side: THREE.DoubleSide,
 			transparent: true,
 			extensions: {
 				derivatives: true
@@ -260,7 +259,7 @@ float snoise(vec3 v)
 
 		return () => {
 			console.log('canvas unmount');
-			// quad.dispose();
+			quad.geometry.dispose();
 			material.dispose();
 			canvas.removeChild(renderer.domElement);
 		};

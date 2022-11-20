@@ -1,6 +1,9 @@
 <script lang="ts">
+	import DeviceDetector from 'svelte-device-detector';
+
 	// import SEO from '$lib/components/SEO/index.svelte';
 	import Intro from '$lib/components/Intro/Intro.svelte';
+	import Canvas from '$lib/components/Canvas/HomeCanvas.svelte';
 	import ProjectGrid from '$lib/components/Projects/ProjectGrid.svelte';
 	import ProjectCard from '$lib/components/Projects/ProjectCard.svelte';
 	import Heading from '$lib/components/UI/Heading.svelte';
@@ -11,6 +14,11 @@
 	let text = 'Jason Thompson, developer based in Berlin, Germany.';
 </script>
 
+<DeviceDetector showInDevice="desktop">
+	<section class="absolute top-0 left-0 w-full h-[70vh] md:h-screen">
+		<Canvas />
+	</section>
+</DeviceDetector>
 <Intro {text} />
 
 {#if projects.length > 0}
