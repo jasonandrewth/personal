@@ -50,6 +50,6 @@ void main() {
 
     }
   // colour = mix(vec3(1.0), colour, uMouse.x);
-    gl_FragColor = vec4(colour, 1.);
+    gl_FragColor = vec4(colour, 0.8);
 
 }
