@@ -3,6 +3,9 @@
 
 	import { onMount } from 'svelte';
 
+	import vertex from './GLSL/homeVertex.glsl?raw';
+	import fragment from './GLSL/homeFragment.glsl?raw';
+
 	let canvas: HTMLDivElement;
 
 	onMount(() => {
@@ -22,64 +25,12 @@
 		const material = new THREE.ShaderMaterial({
 			transparent: true,
 			uniforms: {
-				uTime: { value: 0.0 }
+				uTime: { value: 0.0 },
+				uMouse: { value: new THREE.Vector3() }
 			},
 			//vertex shader
-			vertexShader: /*glsl*/ `
-			varying vec2 vUv;
-            void main() {
-            vUv = uv;
-            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-            }
-      `,
-			fragmentShader: /* glsl */ `
-            precision mediump float;
-
-// float uTime;
-varying vec2 vUv;
-uniform float uTime;
-
-float n21(vec2 p) {
-    return fract(sin(p.x * 100. + p.y * 6574.) * 5647. + uTime * 0.03);
-}
-
-float valueNoise(vec2 p) {
-  //Make Grid
-    vec2 localUv = fract(p * 1.0);
-  //Cheap smoothstep
-    localUv = localUv * localUv * (3. - 2. * localUv);
-  //current GridCell
-    vec2 id = floor(p * 1.0);
-
-  //NoiseValues in Grid corners
-    float bottomLeft = n21(id);
-    float bottomRight = n21(id + vec2(1.0, 0.0));
-    float topLeft = n21(id + vec2(0.0, 1.0));
-    float topRight = n21(id + vec2(1.0));
-  //Mix based on position in the cell represented by localUv
-    float bottomMix = mix(bottomLeft, bottomRight, localUv.x);
-    float topMix = mix(topLeft, topRight, localUv.x);
-
-    return mix(bottomMix, topMix, localUv.y);
-}
-
-void main() {
-    vec3 colour = vec3(0.5);
-
-    float c = valueNoise(vUv * 2.);
-    c += valueNoise(vUv * 4.) * .5;
-    c += valueNoise(vUv * 8.) * .25;
-    c += valueNoise(vUv * 16.) * .125;
-    c += valueNoise(vUv * 32.) * .0625;
-
-    c /= 2.;
-    colour = vec3(c);
-    colour = mix(vec3(0.), vec3(1.0, 0.0, 0.0), c);
-
-    gl_FragColor = vec4(colour, 0.5);
-
-    }
-      `
+			vertexShader: vertex,
+			fragmentShader: fragment
 		});
 
 		const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -125,6 +76,22 @@ void main() {
 
 		window.addEventListener('resize', () => {
 			resize();
+		});
+
+		document.addEventListener('mousedown', () => {
+			quad.material.uniforms.uMouse.value.z = 1;
+		});
+
+		document.addEventListener('mouseup', () => {
+			quad.material.uniforms.uMouse.value.z = 0;
+		});
+
+		document.addEventListener('mousemove', (e) => {
+			window.addEventListener('resize', resize, false);
+			quad.material.uniforms.uMouse.value.x = (e.clientX - 112) / sizes.width;
+			quad.material.uniforms.uMouse.value.y = (sizes.height - e.clientY) / sizes.height;
+
+			console.log(quad.material.uniforms.uMouse.value.x, quad.material.uniforms.uMouse.value.y);
 		});
 
 		/**
