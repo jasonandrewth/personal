@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { loading } from '$lib/loading';
+	import { loading } from '$lib/context/loading';
 
 	const wait = () => new Promise((resolve) => setTimeout(resolve, 800));
 </script>

@@ -6,6 +6,31 @@
 	import vertex from './GLSL/homeVertex.glsl?raw';
 	import fragment from './GLSL/homeFragment.glsl?raw';
 
+	//Check if dark
+	import { darkMode } from '$lib/context/darkMode';
+
+	export let hovered: boolean;
+
+	const material = new THREE.ShaderMaterial({
+		transparent: true,
+		uniforms: {
+			uHovered: { value: hovered },
+			uTime: { value: 0.0 },
+			uMouse: { value: new THREE.Vector3() },
+			uDark: { value: $darkMode }
+		},
+		//vertex shader
+		vertexShader: vertex,
+		fragmentShader: fragment
+	});
+
+	const changeHover = (hovered: boolean) => {
+		console.log(hovered);
+		material.uniforms.uHovered.value = hovered;
+	};
+
+	$: changeHover(hovered);
+
 	let canvas: HTMLDivElement;
 
 	onMount(() => {
@@ -22,15 +47,8 @@
 		// scene.background = new THREE.Color(0xff0000);
 		// const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
-		const material = new THREE.ShaderMaterial({
-			transparent: true,
-			uniforms: {
-				uTime: { value: 0.0 },
-				uMouse: { value: new THREE.Vector3() }
-			},
-			//vertex shader
-			vertexShader: vertex,
-			fragmentShader: fragment
+		darkMode.subscribe((value) => {
+			material.uniforms.uDark.value = value;
 		});
 
 		const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -90,8 +108,6 @@
 			window.addEventListener('resize', resize, false);
 			quad.material.uniforms.uMouse.value.x = (e.clientX - 112) / sizes.width;
 			quad.material.uniforms.uMouse.value.y = (sizes.height - e.clientY) / sizes.height;
-
-			console.log(quad.material.uniforms.uMouse.value.x, quad.material.uniforms.uMouse.value.y);
 		});
 
 		/**

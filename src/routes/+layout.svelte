@@ -9,7 +9,9 @@
 	import Footer from '$lib/components/Footer/Footer.svelte';
 	import Loading from '$lib/components/UI/Loading.svelte';
 
-	import { loading } from '$lib/loading';
+	import { darkMode } from '$lib/context/darkMode';
+
+	import { loading } from '$lib/context/loading';
 
 	//Styles Global
 	import 'prism-themes/themes/prism-dracula.css';
@@ -22,14 +24,16 @@
 		menuOpen = !menuOpen;
 	};
 
-	let darkMode = true;
+	// let darkMode = true;
 
 	const darkModeHandler = () => {
-		darkMode = !darkMode;
+		darkMode.set(!$darkMode);
 
-		localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+		console.log($darkMode);
 
-		darkMode
+		localStorage.setItem('theme', $darkMode ? 'dark' : 'light');
+
+		$darkMode
 			? document.documentElement.classList.add('dark')
 			: document.documentElement.classList.remove('dark');
 	};
@@ -40,10 +44,10 @@
 			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
 		) {
 			document.documentElement.classList.add('dark');
-			darkMode = true;
+			darkMode.set(true);
 		} else {
 			document.documentElement.classList.remove('dark');
-			darkMode = false;
+			darkMode.set(false);
 		}
 	}
 
