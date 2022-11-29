@@ -1,5 +1,13 @@
 [
 	{
+		"image": "/little-portland.png",
+		"title": "Little Portland",
+		"description": "Landing Page for a venue, with interactive custom svg animations and a 3D scene.",
+		"roles": ["Development"],
+		"link": "https://www.little-portland.com/",
+		"tech": ["Next.js", "Three.js", "Contentful"]
+	},
+	{
 		"image": "/Grapevine.png",
 		"title": "Thru the Grapevine",
 		"description": "Custom WordPress Theme for Berlin based digital radio format including a 3D Header Section and custom fields.",
