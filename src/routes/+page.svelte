@@ -8,7 +8,7 @@
 	//Import projects
 	import projects from '$lib/data/projects.json';
 
-	let text = 'Jason Thompson | Web Development | Design | Graphics';
+	let text = 'Jason Thompson | Creative Technology';
 </script>
 
 <!-- <DeviceDetector showInDevice="desktop">
@@ -30,7 +30,6 @@
 
 <section id="contact" class="w-full grid grid-cols-1 md:grid-cols-2 gap-1">
 	<div class="pt-4 text-xl lg:text-2xl mb-2">
-		<h3 class="text-2xl">Jason Thompson | Creative Technology</h3>
 		<p>Full stack. Web Development. Design. Computer Graphics. IoT systems.</p>
 
 		<p>
