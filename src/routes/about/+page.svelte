@@ -8,17 +8,9 @@
 <Heading>about</Heading>
 
 <div class="pt-0 md:max-w-[70vw] prose-xl lg:prose-2xl ">
-	<h3 class="text-2xl">Jason Thompson | Web Development | Design | Copmuter Graphics</h3>
-	<p>
-		I'm a web developer with particular interest in computer graphics. In my work I build and design
-		component-driven interfaces, where I especially like working on more playful / gamified web
-		experiences that might diverge from tested UX patterns. In a more general sense, I enjoy
-		exploring how systems and humans interact in sometimes unexpected ways.
-	</p>
-	<p>
-		While I mostly focus on client-side interfaces, interactively visualizing different data sources
-		or even building physical devices in the realm of IoT Design are also things I'm interested in.
-	</p>
+	<h3 class="text-2xl">Jason Thompson | Creative Technology</h3>
+	<p>Full stack. Web Development. Design. Computer Graphics. IoT systems.</p>
+
 	<!-- I mainly use modern JavaScript in my work. On the user-facing side I prefer using JavaScript frameworks
 	like<strong>ReactJS</strong> or <strong>Svelte</strong> with CSS preprocessors or Tailwind CSS.
 	For more interactive experiences I use WebGL through <strong>Three.js</strong>, sometimes writing
