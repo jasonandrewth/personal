@@ -30,10 +30,12 @@
 
 <section id="contact" class="w-full grid grid-cols-1 md:grid-cols-2 gap-1">
 	<div class="pt-4 text-xl lg:text-2xl mb-2">
+		<h3 class="text-2xl">Jason Thompson | Creative Technology</h3>
+		<p>Full stack. Web Development. Design. Computer Graphics. IoT systems.</p>
+
 		<p>
-			I'm interested in freelance opportunities and collaborations in almost any field where my
-			skills can be of use. However, if you have other request or questions, contact me via the
-			email provided in the footer.
+			Interested in freelance opportunities and collaborations anywhere my skills can be of use. For
+			any other request or questions, contact me via the email provided in the footer.
 		</p>
 	</div>
 </section>
