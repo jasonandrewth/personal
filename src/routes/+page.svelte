@@ -30,7 +30,7 @@
 
 <section id="contact" class="w-full grid grid-cols-1 md:grid-cols-2 gap-1">
 	<div class="pt-4 text-xl lg:text-2xl mb-2">
-		<p>Full stack. Web Development. Design. Computer Graphics. IoT systems.</p>
+		<p>Full stack Web Development. Design. Computer Graphics. IoT systems.</p>
 
 		<p>
 			Interested in freelance opportunities and collaborations anywhere my skills can be of use. For

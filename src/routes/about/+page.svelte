@@ -9,7 +9,7 @@
 
 <div class="pt-0 md:max-w-[70vw] prose-xl lg:prose-2xl ">
 	<h3 class="text-2xl">Jason Thompson | Web Development | Creative Technology</h3>
-	<p>Full stack. Design. Computer Graphics. IoT systems.</p>
+	<p>Full stack Web Development. Design. Computer Graphics. IoT systems.</p>
 
 	<!-- I mainly use modern JavaScript in my work. On the user-facing side I prefer using JavaScript frameworks
 	like<strong>ReactJS</strong> or <strong>Svelte</strong> with CSS preprocessors or Tailwind CSS.
