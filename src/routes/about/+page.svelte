@@ -11,8 +11,7 @@
 	<h3 class="text-2xl">Jason Thompson | Web Development | Creative Technology</h3>
 	<p>
 		I'm a developer and designer focusing on future-oriented web experiences using next generation
-		tools. My goal is to create future-proof web solutions with a strong emphasis on visual
-		identity.
+		tools. My goal is to create long-term web solutions with a strong emphasis on visual identity.
 	</p>
 
 	<p>
