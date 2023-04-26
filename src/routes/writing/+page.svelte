@@ -16,5 +16,7 @@
 				<BlogCard {post} />
 			</li>
 		{/each}
+	{:else}
+		<p>Soon</p>
 	{/if}
 </ul>
