@@ -30,11 +30,10 @@
 
 <section id="contact" class="w-full grid grid-cols-1 md:grid-cols-2 gap-1">
 	<div class="pt-4 text-xl lg:text-2xl mb-2">
-		<p>Full stack Web Development. Design. Computer Graphics. IoT systems.</p>
-
 		<p>
-			Interested in freelance opportunities and collaborations anywhere my skills can be of use. For
-			any other request or questions, contact me via the email provided in the footer.
+			I'm a developer and designer focusing on future-oriented web experiences using next generation
+			tools. My goal is to create future-proof web solutions with a strong emphasis on visual
+			identity.
 		</p>
 	</div>
 </section>

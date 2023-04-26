@@ -9,7 +9,16 @@
 
 <div class="pt-0 md:max-w-[70vw] prose-xl lg:prose-2xl ">
 	<h3 class="text-2xl">Jason Thompson | Web Development | Creative Technology</h3>
-	<p>Full stack Web Development. Design. Computer Graphics. IoT systems.</p>
+	<p>
+		I'm a developer and designer focusing on future-oriented web experiences using next generation
+		tools. My goal is to create future-proof web solutions with a strong emphasis on visual
+		identity.
+	</p>
+
+	<p>
+		I'm interested in freelance opportunities and collaborations where my skills can be of use. For
+		any other request or questions, contact me via the email provided in the footer.
+	</p>
 
 	<!-- I mainly use modern JavaScript in my work. On the user-facing side I prefer using JavaScript frameworks
 	like<strong>ReactJS</strong> or <strong>Svelte</strong> with CSS preprocessors or Tailwind CSS.
